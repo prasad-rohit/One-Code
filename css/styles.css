@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
 @font-face {
     font-family: 'Hallandale';
     src: url('/hallandale_text_jl.ttf');
@@ -14,20 +16,126 @@ body {
 
 header{
     display: grid;
-    grid-template-columns: 10% auto;
-    grid-template-rows: 10% auto;
-    font-family: 'Hallandale';
+    grid-template-columns: 9% auto;
+    /* grid-template-rows: 10% auto; */
+    font-family: 'Oswald', sans-serif;
+}
+
+.side_nav{
+    display: grid;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+    justify-content: center;
+    align-items: center;
+    background: #F54A12;
+    color: #ffffff;
+    letter-spacing: .1rem;
+}
+
+.menu{
+    width: 50%;
+    margin: 0 auto;
 }
 
 .content{
     height: 100vh;
     background: #E9F0EC;
     text-align: center;
+    perspective: 1300px;
+}
+
+h1{
+    height: 50vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(40deg);
+    font-size: 5.5rem;
+    perspective: 1000px;
+    
+}
+
+h1::after{
+    content: "";
+    position: absolute;
+    width: 8rem;
+    border-bottom: 720px solid #41c3bd9d;
+    border-left: 60px solid transparent;
+    border-right: 170px solid transparent;
+    transform: rotate(270deg);
+    left: 36rem;
+    top: -15rem;
+    z-index: -1;
 }
 
 h4{
-    width: 100%;
+    justify-self: center;
     writing-mode: vertical-lr;
-    height: max-content;
-    padding-top: 3rem;
+}
+
+h3{
+    padding: 2rem 0 2rem 0;
+    width: 45%;
+    margin: 0 auto;
+    border-radius: 5%;
+}
+
+#cp, #dev{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    font-weight: bold;
+}
+
+#cp::before, #dev::before {
+    content: '';
+    background-color: #41c3bd9d;
+    position: absolute;
+    left: .5rem;
+    bottom: 5px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+}
+    
+#cp:hover::before , #dev:hover::before{
+    left: -5px;
+    bottom: 0;
+    height: 100%;
+    width: calc(100% + 10px);
+} 
+
+#cp:hover , #dev:hover{
+    letter-spacing: .1rem;
+    transition: all .3s ease-in-out;
+}
+
+.streams{
+    display: flex;
+    justify-content: space-around;
+    height: 28vh;
+    font-size: larger;
+}
+
+.development{
+    width: 100%;
+    border-right: 1px solid black;
+    /* background: url("/img/dev.png") no-repeat 100px; */
+    overflow: hidden;
+}
+
+.dev_img, .cp_img{
+    width: 15%;
+    top: 28rem;
+    position: absolute;
+    z-index: -1;
+}
+
+.cp_img{
+    width: 24%;
+}
+
+.cp{
+    width: 100%;
+    
 }
